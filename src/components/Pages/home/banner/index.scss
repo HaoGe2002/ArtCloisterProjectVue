@@ -1,0 +1,105 @@
+@use '@/assets/styles/variables.scss' as *;
+
+  .Home-Banner {
+      padding: 10px 10px;
+    }
+  
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: 1s;
+  
+    .slide-content {
+      width: 100%;
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      padding: 10px;
+    }
+  
+    .slide-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+      transition: 0.5s;
+    }
+  
+    .slide-text {
+      padding: 5px;
+      position: absolute;
+      bottom: 10px;
+      color: #fff;
+      z-index: 2;
+      span {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        text-shadow: 1px 1px black;
+        font-weight: bold;
+      }
+      p {
+        font-size: 14px;
+        color: rgb(202, 201, 201);
+      }
+    }
+  
+    .slide-content:hover .slide-overlay {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  
+    .badge {
+      color: #ffffff;
+      position: relative;
+      background-color: rgba(12, 12, 12, 0.2);
+      line-height: 50px;
+      padding: 5px 10px;
+      border-radius: 0px 5px 5px 0px;
+      font-size: 12px;
+      top: 1px;
+      left: 1px;
+    }
+  }
+  
+  /* 自定义箭头样式 */
+  :deep(.swiper-button-prev),
+  :deep(.swiper-button-next) {
+    background-color: rgba(0, 0, 0, 0.0); /* 初始背景颜色为透明 */
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    transition: background-color 0.3s ease; /* 调整为更快的过渡效果 */
+  }
+  
+  /* 调整箭头符号的大小 */
+  :deep(.swiper-button-next::after),
+  :deep(.swiper-button-prev::after) {
+    font-size: 20px;
+  }
+  
+  /* 设置箭头的位置 */
+  :deep(.swiper-button-prev) {
+    left: 10px;
+  }
+  
+  :deep(.swiper-button-next) {
+    right: 10px;
+  }
+  
+  /* 鼠标悬停时改变背景颜色 */
+  :deep(.swiper-button-prev:hover),
+  :deep(.swiper-button-next:hover) {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
